@@ -43,3 +43,115 @@ export default function App() {
 
 const result = [1, 2, 3, 4].reduce((a, b) => a + b, 0);
 console.log(result)
+
+
+
+14-10-2025(TUESDAY):
+
+function removeDuplicates(arr) {
+  return [...new Set(arr)];                   
+}
+console.log(removeDuplicates([1, 2, 2, 3, 4, 4, 5]));
+
+const nums = [1, 2, 3, 4, 5, 6];
+const evens = nums.filter(n => n % 2 === 0);
+console.log(evens);
+
+const words = ["apple", "banana", "orange"];
+const upper = words.map(w => w.toUpperCase());
+console.log(upper);
+
+const obj1 = { a: 1, b: 2 };
+const obj2 = { b: 3, c: 4 };
+const merged = { ...obj1, ...obj2 };
+console.log(merged);
+
+const nums3 = [10,20,5,8];
+const max = Math.max(...nums3);
+const min = Math.min(...nums3);
+console.log(max, min); 
+
+const nums4 = [1, 2, 3, 4, 5]; 
+const multiplied = nums.map((n, i) => n * i); 
+console.log(multiplied);
+
+const gh = "JavaScript";
+console.log(gh.length);
+
+let a = [3,1], b = [4,2];
+let merged = a.concat(b).sort((x,y)=>x-y);
+console.log(merged)
+
+let arr = [1,2,3,4];
+arr.splice(2,1); 
+console.log(arr);
+
+function factorial(n){
+  return n === 0 ? 1 : n * factorial(n-1);
+}
+console.log(factorial(5));
+
+let a=5, b=10;
+[a,b]=[b,a];
+console.log(a,b);
+
+let str="Hello world JS";
+console.log(str.split(' ').length);
+
+let arr=["A","B","C"];
+console.log(arr.map(x=>x.toLowerCase())); 
+
+
+import React, { useState } from "react";
+function App() {
+  const [color, setColor] = useState("white");
+  return (
+    <div style={{ backgroundColor: color, padding: "20px" }}>
+      <button onClick={() => setColor("yellow")}>Yellow</button>
+      <button onClick={() => setColor("lightblue")}>Blue</button>
+    </div>
+  );
+}
+export default App;
+
+
+import React from "react";
+import axios from "axios";
+const App = () => {
+  async function apiCall() {
+    const response = await axios.get(
+      "https://official-joke-api.appspot.com/random_joke"
+    );
+    console.log(response.data);
+  }
+  useEffect = (() => {
+      apiCall();
+    },[]);
+  return (
+    <div>
+      <h1>API CALL</h1>
+      <button onClick={apiCall}>api call</button>
+    </div>
+  );
+};
+export default App;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
