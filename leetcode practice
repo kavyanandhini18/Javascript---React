@@ -277,6 +277,137 @@ export default function CounterStep() {
 }
 
 
+16-10-2025 :(Thursday)
+
+const arr1=[1,2,3,4,5]
+const doubled=arr.map(n=>n*2)
+const sum=doubled.reduce((a,b)=>a+b)
+console.log(doubled)
+console.log(sum)
+
+const arr2 = [3, 7, 2, 9, 5];
+const max = arr.reduce((a,b) => a>b ? a : b);
+console.log("Max:", max);
+
+const arr3 = [1,2,3,4,5];
+const doubledEven = arr.map(n => n%2===0 ? n*2 : n);
+console.log( doubledEven);
+
+
+const arr5= [1,2,3,4,5];
+const doubledEven = arr3.map(n => n%2===0 ? n*2 : n);
+console.log( doubledEven);
+
+function isPalindrome(str){
+    return str===str.split('').reverse().join('')
+}
+console.log(isPalindrome("level"))
+
+const arr=[1,2,3,4,5,];
+const size=2;
+const result=[];
+for(i=0;i<arr.length;i+=size){
+    result.push(arr.slice(i,i+size))
+}
+console.log(result)
+
+const arr4 = [2,4,6,8];
+const multiplied = arr.map((n,i) => n*i);
+console.log( multiplied);
+
+
+function removeDuplicates(arr) {
+  return [...new Set(arr)];
+}
+console.log(removeDuplicates([1, 2, 2, 3, 4, 4, 5]));
+
+
+
+import { useState } from "react";
+export default function InputDisplay() {
+  const [text, setText] = useState("");
+
+  return (
+    <div>
+      <input
+        type="text"
+        placeholder="Type something"
+        value={text}
+        onChange={(e) => setText(e.target.value)}
+      />
+      <p>{text}</p>
+    </div>
+  );
+}
+
+import { useState } from "react";
+
+export default function CharCounter() {
+  const [text, setText] = useState("");
+  return (
+    <div>
+      <input
+        type="text"
+        value={text}
+        onChange={(e) => setText(e.target.value)}
+        placeholder="Type text"
+      />
+      <p>Characters typed: {text.length}</p>
+    </div>
+  );
+}
+
+
+import { useState } from "react";
+export default function PasswordStrength() {
+  const [password, setPassword] = useState("");
+  let strength = "";
+  if (password.length > 10) strength = "Strong";
+  else if (password.length >= 6) strength = "Medium";
+  else if (password.length > 0) strength = "Weak";
+  return (
+    <div>
+      <input
+        type="password"
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+        placeholder="Enter password"
+      />
+      <p>Password Strength: {strength}</p>
+    </div>
+  );
+}
+
+import { useState } from "react";
+export default function PasswordToggle() {
+  const [show,setShow]=useState(false);
+  return (
+    <>
+      <input type={show?"text":"password"} placeholder="Password" />
+      <button onClick={()=>setShow(!show)}>Toggle</button>
+    </>
+  );
+}
+
+
+import { useState } from "react";
+export default function ColorBox() {
+  const [color, setColor] = useState("white");
+  return (
+    <div style={{ background: color, padding: "20px" }}>
+      <select onChange={(e) => setColor(e.target.value)}>
+        <option value="white">White</option>
+        <option value="blue">Blue</option>
+        <option value="pink">Pink</option>
+      </select>
+    </div>
+  );
+}
+
+
+
+
+
 
 
 
