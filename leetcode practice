@@ -405,6 +405,128 @@ export default function ColorBox() {
 }
 
 
+23-10-2025(THURSDAY):
+
+function createCounter(n){
+let count=n;
+return function(){
+    return count++;
+}
+}
+const counter=createCounter(10)
+console.log(counter)
+
+
+function createCounter(init) {
+  let value = init;
+  return {
+    increment: () => ++value,
+    decrement: () => --value
+  };
+}
+
+const counter = createCounter(5);
+console.log(counter.increment());
+console.log(counter.decrement()); 
+
+
+let str = "hello";
+let duplicates = [...new Set(str)].filter(c => str.split(c).length - 1 > 1);
+console.log(duplicates);
+
+
+let str = "hello world";
+console.log(str.includes("world"));
+
+let arr = [1,2,2,3];
+console.log([...new Set(arr)])
+
+
+let str = "I love JS";
+console.log(str.split(" ").reverse().join(" "));
+
+
+let arr=[2,3,1,5,4];
+arr.sort((a,b)=>b-a);
+console.log(arr[1]);
+
+function argumentsLength(...args){
+    return args.length
+}
+console.log(argumentsLength(1,2,3,3,4,))
+
+const arr = [1,2,2,3,2,4];
+const count = arr.filter(x => x === 2).length;
+console.log(count);
+
+
+const a = [1,2];
+const b = [3,4];
+const merged = [...a, ...b];
+console.log(merged);
+
+
+ function factorial(n) {
+  if(n === 0) return 1;
+  return n * factorial(n - 1);
+}
+console.log(factorial(5))
+
+
+
+import React, { useState } from "react";
+function MirrorInput() {
+  const [text, setText] = useState("");
+  return (
+    <div>
+      <input value={text} onChange={(e) => setText(e.target.value)} />
+      <p>You Typed: {text}</p>
+    </div>
+  );
+}
+export default MirrorInput;
+
+
+function FormAlert() {
+  const [text, setText] = useState("");
+
+  const handleSubmit = e => {
+    e.preventDefault();
+    alert(text);
+    setText("");
+  };
+  return (
+    <form onSubmit={handleSubmit}>
+      <input value={text} onChange={e => setText(e.target.value)} />
+      <button type="submit">Submit</button>
+    </form>
+  );
+}
+
+
+import React, { useState } from "react";
+function DarkMode() {
+  const [dark, setDark] = useState(false);
+
+  return (
+    <div
+      style={{
+        background: dark ? "black" : "white",
+        color: dark ? "white" : "black",
+        padding: "20px",
+      }}
+    >
+      <p>{dark ? "Dark Mode" : "Light Mode"}</p>
+      <button onClick={() => setDark(!dark)}>Toggle</button>
+    </div>
+  );
+}
+export default DarkMode;
+
+
+
+
+
 
 
 
