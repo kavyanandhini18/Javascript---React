@@ -146,8 +146,7 @@ else if (n < 0) console.log("Negative");
 else console.log("Zero");
 
 
-let year = 2024;
-console.log((year % 4 === 0 && year % 100 !== 0) || year % 400 === 0);
+
 
 let arr = [10, 20, 30];
 let avg = arr.reduce((a,b)=>a+b,0)/arr.length;
